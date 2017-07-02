@@ -3,19 +3,19 @@
 	padding: 0;
 	}
 body {
-	background-image: url("../images/club.jpg")
-/*	background-size: cover;
-*/}
+	background-image: url("../images/club2.jpg");
+	background-size: cover;
+}
 #header {
 	background: linear-gradient(90deg, rgba(12,0,58,1), rgba(12,0,58,.7));
 	margin-top: 50px;
-	margin-bottom: 50px;
 	height: 100px;
 }
-
-.container {
-	width: 100%;
+#nav {
+	margin-bottom: 50px;
 }
+.container {
+	width: 98%;}
 footer {
 	background-color: black;
 	height: 100px;
@@ -38,19 +38,25 @@ footer {
 }
 #feed {
 	margin: auto 5px auto 5px;
+	display: inline-block;
 }
-#feed .row {
+#feed .posts {
 	height: 100px;
-	background-color: grey;
-	border: 1px solid darkgrey;
+	background: linear-gradient(rgba(239,239,239,1),rgba(0,2,53,1));
+	margin:0 5px 20px 5px;
+	border-radius: 5%;
 }
 #sponsors .row {
 	height: 200px;
 	background-color: darkgrey;
 	border: 1px solid grey;
+	margin: 40px auto;
 }
 h5 {
 	color: black;
+}
+.posts h5{
+	color: white;
 }
 form {
 	width: 300px;
