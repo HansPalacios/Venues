@@ -18,17 +18,21 @@ get '/' do
 	erb :home
 end
 
-get '/email' do
-	erb :email
+get '/profile' do
+	erb :profile
 end
+
+get '/archive' do
+	erb :archive
+end 
 
 # get '/home' do
 # 	erb 
-post '/email' do
+post '/profile' do
 	@post = Email.create(params[:email])
-	flash[:notice] = "We hast received your email and will get back to you as soon as possible"
+	flash[:notice] = "We have received your email and will get back to you as soon as possible"
 	flash[:alert] = "You need to put on a sweater"
-	redirect "/email"
+	redirect "/profile"
 
 end
 
