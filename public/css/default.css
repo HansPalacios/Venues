@@ -35,7 +35,7 @@ body {
 	height: 30px;
 }
 .shade {
-	background-color: rgba(100,100,100,.8);
+	background: linear-gradient( black,rgba(100,100,100,.7));
 	padding-top: 20px;
 	border-radius: 2%;
 }
