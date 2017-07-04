@@ -87,8 +87,12 @@ body {
 h5 {
 	color: black;
 }
+.posts img{
+	margin: 20px;
+}
 .posts h5{
 	color: white;
+	margin: 20px;
 }
 
 h1 {
