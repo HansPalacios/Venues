@@ -26,8 +26,19 @@ get '/archive' do
 	erb :archive
 end 
 
-# get '/home' do
-# 	erb 
+get '/signup' do
+	erb :signup
+end
+
+before do
+	@post = {
+		post1:{name: "House of Yes", image: "/images/houseofyes.jpeg", description: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", categories: ["July"]},
+	}
+	# @archive = @post.reduce([]) do |arr,(key,hash)|
+	# 	arr | hash[:categories]
+	# end
+end
+
 post '/profile' do
 	@post = Email.create(params[:email])
 	flash[:notice] = "We have received your email and will get back to you as soon as possible"
@@ -41,10 +52,9 @@ post '/sign-in' do
 	if
 		@user && @user.password == params[:password]    
 		session[:user_id] = @user.id    
-		flash[:notice] = "You've been signed in successfully."
-		redirect "/email"
+		flash[:alert] = "You've been signed in successfully."
+		redirect "/profile"
 	else    
-		flash[:alert] = "There was a problem signing you in."
+		flash[:notice] = "There was a problem signing you in."
 	end
-	  redirect "/"
 	end
