@@ -1,31 +1,36 @@
-<!-- Steven -->
-<!-- <div class="row">
+<<<<<<< HEAD
+=======
+
+<div class="row">
   <div class="col-md-2">
-    <div class="">
-      <nav class="">
-        <ul class="">
-          <% while (@n < @archive.length) %>
-            <% @archive.each do |post| %>
-              <li><a href="/c/<%= @archive[@n] %>"><%= post %></a></li>
-              <%end %>
-              <% @n += 1 %>
-            
-          <%end %>
-          <% @n = 0 %>
-        </ul>
-      </nav>
-    </div>
+    <div id="months" class="col-md-1">
+		<div class="row">
+			<h5>Months</h5>
+		</div>
+		<div class="row">
+			<a href="/archive/july"><h5>July</h5></a>
+		</div>
+		<div class="row">
+			<a href="/archive/august"><h5>Aug</h5></a>
+		</div>
+		<div class="row">
+			<a href="/archive/september"><h5>Sep</h5></a>
+		</div>
+		<div class="row">
+			<a href="/archive/october"><h5>Oct</h5></a>
+		</div>
+	</div>
   </div>
   <div class="col-md-10">
-    <article class="">
-      <% @post.each do |post,hash| %>
-          <a href="/p/<%= post %>"><div class="catDivs" style="background-image:url(<%= hash[:image] %>)"><div class="prodName"> <%= hash[:name] %> </div></div></a>
-      <% end %>
-    </article>
+    <div class="posts">
+    	<% @posts.each do|post| %>
+   			<article><a href="/posts/<%=post.id%>"></a></article>
+   		<%end%>
+    </div>
   </div>
 </div>
 
- -->
+
 
 
 
@@ -38,4 +43,5 @@
 		<label for="text">Content</label>
 		<textarea name="[emails]content"></textarea>
 		<input type="submit">
-</form> --> --> 
+</form> --> --> -->
+>>>>>>> 6df9b7ad5234c6096e2f85da12d4b8ff3001b6a5
