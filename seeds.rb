@@ -1,6 +1,6 @@
 myUsers = [
-	{:username => 'Dennis', :password => 'california', :email => 'dennis@california.net'}, 
-	{:username => 'Logan', :password => 'Julia', :email => 'secret@dmirer.com'},
+	{username: 'Dennis', password: 'california', email: 'dennis@california.net'}, 
+	{:username => 'Logan', :password => 'Baker', :email => 'logan@flour.com'},
 	{username: 'Nick', password: 'Fehlinger', email: 'bearded@hipster.com'}
 	]
 

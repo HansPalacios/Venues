@@ -4,26 +4,58 @@
 	}
 body {
 	background-image: url("../images/club2.jpg");
-	background-size: cover;
+	background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #header {
 	background: linear-gradient(90deg, rgba(12,0,58,1), rgba(12,0,58,.7));
 	margin-top: 50px;
 	height: 100px;
 }
+#header #signup, #header #signin {
+	height: 30px;
+	padding: 5px;
+	margin-top: 25px;
+	border: 1px solid black;
+	text-align: center;
+	background: linear-gradient(black,rgba(100,100,100,.5));
+	color: white;
+	cursor: pointer;
+}
 #nav {
 	margin-bottom: 50px;
 }
 .container {
-	width: 98%;}
-footer {
-	background-color: black;
-	height: 100px;
-	bottom: 0;
+	width: 98%;
 }
 #nav {
 	background-color: rgba(100,100,100,.5);
 	height: 30px;
+}
+.shade {
+	background: linear-gradient( black,rgba(100,100,100,.7));
+	padding-top: 20px;
+	border-radius: 2%;
+}
+.shade-su {
+	background-color: rgba(100,100,100,.8);
+	padding: 50px;
+	margin: 50px;
+}
+.shade-su label {
+	color: white;
+	font-size: 15px;
+}
+.shade-su input {
+	margin-bottom: 20px;
+}
+.shade-su p {
+	color: white;
+	font-size: 25px;
+	text-align: center;
+	margin: 20px;
 }
 #months .row {
 	height: 30px;
@@ -37,12 +69,12 @@ footer {
 	font-size: 20px
 }
 #feed {
-	margin: auto 5px auto 5px;
+	margin: 0 5px auto 5px;
 	display: inline-block;
 }
 #feed .posts {
 	height: 100px;
-	background: linear-gradient(rgba(239,239,239,1),rgba(0,2,53,1));
+	background: linear-gradient(90deg, rgba(12,0,58,1), rgba(12,0,58,.3));
 	margin:0 5px 20px 5px;
 	border-radius: 5%;
 }
@@ -55,20 +87,14 @@ footer {
 h5 {
 	color: black;
 }
+.posts img{
+	margin: 20px;
+}
 .posts h5{
 	color: white;
+	margin: 20px;
 }
-form {
-	width: 300px;
-	height: 300px;
-	margin: 0 auto;
-	background-color: orange;
-	border-radius: 30%;
-	padding: 50px;
-}
-input, label {
-	margin-top: 20px;
-}
+
 h1 {
 	width: 240px;
 	margin: 30px auto;
@@ -85,48 +111,68 @@ li {
 	margin: 3px 20px;
 	float: left;
 }
-#contact {
+footer {
+	background-color: black;
+	height: 200px;
+	padding: 20px;
+	bottom: 0;
+}
+#contactbtn, footer p {
+	width: 200px;
+	color: white;
+	top: 20%;
+	left: 20%;
+	cursor: pointer;
+	margin: 5px;
+}
+
+#contact, #signinbox {
 	width: 600px;
 	height: 350px;
-	background-color: rgba(255,255,255,0.9);
-	border: 2px solid blue;
+	background-color: rgba(100,100,100,.8);
+	border: 2px solid black;
 	padding: 30px 50px;
 	border-radius: 25px;
 	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	text-align: center;
+	top: 20%;
+	left: 20%;
 	display: none;
+	z-index: 1;
 }
-#close{
+#contact h3, #signinbox{
+	color: white;
+	text-align: center;
+}
+#close, #close2 {
 	right: 15px;
 	top: 10px;
 	position: absolute;
 	cursor: pointer;
+	color: white;
 }
-h3{
-	margin: 0;
-}
-form{
-	width:	500px;
-	margin: 20px auto;
-}
-	
+
 form input{
 		display: block;
 		width: 100%;
 		height: 20px;
 		font-size: 16px;
 		margin-top: 10px;
-	}
+		padding: 10px;
+		background-color: rgba(224,224,224,1);}
 form textarea{
 	height: 100px;
 	display: block;
 	width: 100%;
 	font-size: 16px;
 	margin-top: 10px;
+	background-color: rgba(224,224,224,1);
+	color: white;
+	padding: 10px;
 }
 form input[name="submit"]{
-	width: 100px;
-	margin-left: 80%;
+	width: 80px;
+	height: 25px;
+	margin: 10px auto;
+	padding: 1px;
 }

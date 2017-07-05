@@ -14,8 +14,26 @@
 		<div class="col-md-3">
 			<a href="/"><h1>Venues</h1></a>
 		</div>
-		<div class="col-md-9">
-			
+		<div class="col-md-5">
+		</div>
+		<div class="col-md-2">
+		<a href="/signup"><p id="signup">Sign Up</p></a>
+		</div>
+		<div class="col-md-2">
+			<p id="signin">Sign In</p>
+		</div>
+		<div id="signinbox">
+			<h1>Sign In</h1>
+			<div id="close">x</div>
+			<%flash[:notice]%>
+			<form method="POST" action="/sign-in">
+			<label for="username">Username</label>
+			<input type="text" name="username">
+			<br>
+			<label for="password">Password</label>
+			<input type="password" name="password">
+			<input type="submit" name="submit">	
+			</form>
 		</div>
 	</div>
 	<div id="nav" class="row">
@@ -23,8 +41,8 @@
 			<nav>
 				<ul>
 					<a href="/"><li>Home</li></a>
-					<a href="/profile"><li>Profile</li></a>
 					<a href="/archive"><li>Blog Archive</li></a>
+					<a href="/profile"><li>Profile</li></a>
 				</ul>
 			</nav>
 		</div>
@@ -36,21 +54,30 @@
 <footer>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">
-				<p id="contact">Contact Us</p>
+			<div class="col-md-1">
+				<a href="/"><p>Home</p></a>
+				<a href="/archive"><p>Blog Archive</p></a>
+				<a href="/profile"><p>Profile</p></a>
+				</div>
+				<div class="col-md-9">
+				</div>
+				<div class="col-md-1">
+				<a href="/signup"><p id="signup">Sign Up</p></a>
+				<a href="/signin"><p id="signin">Sign In</p></a>
+				<p id="contactbtn">Contact Us</p>
 			</div>
 	</div>
 </footer>
 <div id="contact" >
-<h3>Contact Us</h3>
-<div id="close">x</div>
-	<form method="POST" action = "/about" id="comments">
-		<input type="text" name="name" placeholder="Name">
-		<input type="email" name="email" placeholder="Email">
-		<input type="text" name="subject" placeholder="Subject">
-		<textarea name="comment" placeholder="Questions? Comments? Concerns?"></textarea>
-		<input type="submit" name="submit">
-	</form>
+	<h3>Contact Us</h3>
+	<div id="close2">x</div>
+		<form method="POST" action = "/about" id="comments">
+			<input type="text" name="name" placeholder="Name">
+			<input type="email" name="email" placeholder="Email">
+			<input type="text" name="subject" placeholder="Subject">
+			<textarea name="comment" placeholder="Type here if you must ask..."></textarea>
+			<input type="submit" name="submit">
+		</form>
 </div>
 <script src="/js/main.js"></script>
 </body>
