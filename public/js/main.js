@@ -7,8 +7,6 @@ signin = document.getElementById("signin");
 signinbox = document.getElementById("signinbox");
 
 
-
-
 signin.addEventListener("click", function(){
     signinbox.style.display = "block";
 });
@@ -22,3 +20,11 @@ contact_button.addEventListener("click", function(){
 close_button2.addEventListener("click", function(){
     contact.style.display = "none";
 });
+
+// edit = document.getElementById("edit");
+// edit_input = document.getElementById("edit_input");	
+// acct_info = document.getElementById("acct_info")
+// edit.addEventListener("click", function(){
+// 	edit_input.style.display = "block";
+// 	acct_info.style.display = "none";
+// });
