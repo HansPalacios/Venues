@@ -30,16 +30,40 @@ get '/signup' do
 	erb :signup
 end
 
+
 before do
-	@post = {
-		post1:{name: "House of Yes", image: "/images/houseofyes.jpeg", description: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", categories: ["July"]},
+	@posts = {
+		houseofyes:{name: "House of Yes", image: "/images/houseofyes.jpeg", description: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", categories: ["July"]},
+		houseofyes:{name: "House of Yes", image: "/images/houseofyes.jpeg", description: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", categories: ["July"]},
+		houseofyes:{name: "House of Yes", image: "/images/houseofyes.jpeg", description: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", categories: ["July"]},
+		houseofyes:{name: "House of Yes", image: "/images/houseofyes.jpeg", description: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", categories: ["July"]},
+		houseofyes:{name: "House of Yes", image: "/images/houseofyes.jpeg", description: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", categories: ["July"]},
+		houseofyes:{name: "House of Yes", image: "/images/houseofyes.jpeg", description: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", categories: ["July"]},
+		houseofyes:{name: "House of Yes", image: "/images/houseofyes.jpeg", description: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", categories: ["July"]},
+		houseofyes:{name: "House of Yes", image: "/images/houseofyes.jpeg", description: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", categories: ["July"]},
+		houseofyes:{name: "House of Yes", image: "/images/houseofyes.jpeg", description: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", categories: ["July"]},
+		houseofyes:{name: "House of Yes", image: "/images/houseofyes.jpeg", description: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", categories: ["July"]},
+		houseofyes:{name: "House of Yes", image: "/images/houseofyes.jpeg", description: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", categories: ["July"]},
+		houseofyes:{name: "House of Yes", image: "/images/houseofyes.jpeg", description: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", categories: ["July"]},
+		houseofyes:{name: "House of Yes", image: "/images/houseofyes.jpeg", description: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", categories: ["July"]},
+		houseofyes:{name: "House of Yes", image: "/images/houseofyes.jpeg", description: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", categories: ["July"]},
 	}
+end
+
+get '/posts' do
+	@posts = Post.all 
+	erb :posts
+end
+get '/post/:id' do
+	@post = Post.find(params[:id])
+end
+
 	# @archive = @post.reduce([]) do |arr,(key,hash)|
 	# 	arr | hash[:categories]
 	# end
-end
 
-post '/profile' do
+
+post '/sign-in' do
 	@post = Email.create(params[:email])
 	flash[:notice] = "We have received your email and will get back to you as soon as possible"
 	flash[:alert] = "You need to put on a sweater"
