@@ -3,28 +3,6 @@ User.create ([
 	{username: 'Logan', fname: 'Logan', lname: 'Baker', password: 'Baker', email: 'logan@flour.com'},
 	{username: 'Nick', fname: 'Nick', lname: 'Fehlinger', password: 'Fehlinger', email: 'bearded@hipster.com'}
 	])
-# myYears = [
-# 	{ id: "2017" year: "2017"},
-# 	{ id: "2018" year: "2018"},
-# 	{ id: "2019" year: "2019"},
-# 	{ id: "2020" year: "2020"},
-# 	{ id: "2021" year: "2021"}
-# ]
-
-# myMonths = [
-# 	{ month: "January"},
-# 	{ month: "February"},
-# 	{ month: "March"},
-# 	{ month: "April"},
-# 	{ month: "May"},
-# 	{ month: "June"}
-# 	{ month: "July"},
-# 	{ month: "August"},
-# 	{ month: "September"},
-# 	{ month: "October"},
-# 	{ month: "November"},
-# 	{ month: "December"}
-# ]
 	Post.create ([
     {title: "House of Yes", content: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", user_id:1},
     {title: "1oak", content: "Great music, very expensive drinks with built in gratuity.", user_id:2},
@@ -38,24 +16,3 @@ User.create ([
     {title: "rose bar", content: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", user_id:3},
     {title: "Jimmys", content: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", user_id:1},
 ])
-
-# # Jump
-# # Mark as read (esc)
-# # Open in new window More actions
-# # ]
-
-# myUsers.each do |user|
-# 	User.create(user)
-# end	
-
-# # myYears.each do |year|
-# # 	Year.create(year)
-# # end
-
-# # myMonths.each do |month|
-# # 	Month.create(month)
-# # end
-
-# myPost.each do |post|
-# 	Post.create(post)
-# end

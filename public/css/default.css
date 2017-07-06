@@ -77,17 +77,7 @@ li {
 	text-align: center;
 	margin: 20px;
 }
-/*#months .row {
-	height: 30px;
-	background-color: rgba(100,100,100,.7);
-	border: 1px solid grey;
-	margin-bottom: 5px;
-}
-#months .row a {
-	width: 100%;
-	text-align: center;
-	font-size: 20px
-}*/
+
 #feed {
 	margin: 0 5px auto 5px;
 	display: inline-block;
@@ -127,7 +117,7 @@ li {
 /*footer & sign in box*/
 footer {
 	background-color: black;
-	height: 200px;
+	height: 120px;
 	padding: 20px;
 	bottom: 0;
 }
@@ -198,12 +188,6 @@ form input[name="submit"]{
 .posts {
 	background-color: darkgrey;
 }
-
-.write {
-	background-color: darkgrey;
-	margin: 100px;
-}
-
 article {
 	margin: 20px;
 /*	border: 2px solid white;
@@ -293,4 +277,8 @@ article h5 {
 	width: 100%;
 	text-align: center;
 	font-size: 30px;
+}
+.writebox {
+	width: 100%;
+	text-align: center;
 }
