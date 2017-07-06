@@ -5,14 +5,14 @@ require 'sinatra/activerecord'
 require 'bundler/setup'
 require 'sinatra/flash'
 configure :development, :test do 
-	set :databse, {adaper: 'sqlite3', database: 'db/microblog'}
+	set :database, {adapter: "sqlite3", database: "db/venues.db"}
 end
 require 'rake'
 require './models'
 enable :sessions
 
 #configure our database
-set :database, {adapter: "sqlite3", database: "db/venues.db"}
+
 # models.rb requires a database connection, so lets include that only after a database is configured
 
 before do
