@@ -23,6 +23,7 @@ get '/' do
 end
 
 get '/profile' do
+	@posts = @current_user.posts
 	erb :profile
 end
 get '/sign-in' do
@@ -84,6 +85,7 @@ post '/profile' do
    end
    redirect '/profile'
  end
+
 
 
 post '/write' do
