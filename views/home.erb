@@ -1,5 +1,5 @@
 <div class="row">
-		<div id="months" class="col-md-1">
+		<!-- <div id="months" class="col-md-1">
 			<div class="row">
 				<a href="/archive"><h5>Blog Archive</h5></a>
 			</div>
@@ -15,112 +15,29 @@
 			<div class="row">
 				<a href="/archive/october"><h5>Oct</h5></a>
 			</div>
-		</div>
-		<div id="feed" class="col-md-8">
+		</div> -->
+		<div id="feed" class="col-md-9">
 			<div class="container">
 				<div class="row shade">
 					<div class="col-md-6">
-						<div class="row posts">
-							<div class="col-md-5">
-								<h5><%= @posts[0].title %></h5>
-							</div>
-							<div class="col-md-7">
-								<a href="/post/<%@posts[0].id%>">
-									<p><%= @posts[0].content %></p>
-								</a>
-							</div>
-						</div>
-						<div class="row posts">
-							<div class="col-md-5">
-								<h5><%= @posts[1].title %></h5>
-							</div>
-							<div class="col-md-7">
-								<a href="/post/<%@posts[1].id%>">
-									<p><%= @posts[1].content %></p>
-								</a>
-							</div>
-						</div>
-						<div class="row posts">
-							<div class="col-md-5">
-								<h5><%= @posts[2].title %></h5>
-							</div>
-							<div class="col-md-7">
-								<a href="/post/<%@posts[2].id%>">
-									<p><%= @posts[2].content %></p>
-								</a>
-							</div>
-						</div>
-						<div class="row posts">
-							<div class="col-md-5">
-								<h5><%= @posts[3].title %></h5>
-							</div>
-							<div class="col-md-7">
-								<a href="/post/<%@posts[3].id%>">
-									<p><%= @posts[3].content %></p>
-								</a>
-							</div>
-						</div>
-						<div class="row posts">
-							<div class="col-md-5">
-								<h5><%= @posts[4].title %></h5>
-							</div>
-							<div class="col-md-7">
-								<a href="/post/<%@posts[4].id%>">
-									<p><%= @posts[4].content %></p>
-								</a>
-							</div>
-						</div>
+						<% for i in 0..4 %>
+							<div class="posts">
+							<a href="/post/<%= @posts[i].id %>">
+							 <h5><%= @posts[i].title %></h5>
+							 <p><%= @posts[i].content %></p>
+							 </a>
+							 </div>
+						<% end %>
 					</div>
 					<div class="col-md-6">
-						<div class="col-md-5">
-								<h5><%= @posts[5].title %></h5>
-							</div>
-							<div class="col-md-7">
-								<a href="/post/<%@posts[5].id%>">
-									<p><%= @posts[5].content %></p>
-								</a>
-							</div>
-					</div>
-						<div class="row posts">
-							<div class="col-md-5">
-								<h5><%= @posts[6].title %></h5>
-							</div>
-							<div class="col-md-7">
-								<a href="/post/<%@posts[6].id%>">
-									<p><%= @posts[6].content %></p>
-								</a>
-							</div>
-						</div>
-						<div class="row posts">
-							<div class="col-md-5">
-								<h5><%= @posts[7].title %></h5>
-							</div>
-							<div class="col-md-7">
-								<a href="/post/<%@posts[7].id%>">
-									<p><%= @posts[7].content %></p>
-								</a>
-							</div>
-						</div>
-						<div class="row posts">
-							<div class="col-md-5">
-								<h5><%= @posts[8].title %></h5>
-							</div>
-							<div class="col-md-7">
-								<a href="/post/<%@posts[8].id%>">
-									<p><%= @posts[8].content %></p>
-								</a>
-							</div>
-						</div>
-						<div class="row posts">
-							<div class="col-md-5">
-								<h5><%= @posts[9].title %></h5>
-							</div>
-							<div class="col-md-7">
-								<a href="/post/<%@posts[9].id%>">
-									<p><%= @posts[9].content %></p>
-								</a>
-							</div>
-						</div>
+						<% for i in 5..9 %>
+							<div class="posts">
+							<a href="/post/<%= @posts[i].id %>">
+							 <h5><%= @posts[i].title %></h5>
+							 <p><%= @posts[i].content %></p>
+							 </a>
+							 </div>
+						<% end %>
 					</div>
 				</div>
 			</div>
