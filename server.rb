@@ -12,8 +12,7 @@ require './models'
 enable :sessions
 
 #configure our database
-
-# models.rb requires a database connection, so lets include that only after a database is configured
+tabase is configured
 
 before do
 @current_user = session[:user_id] ? User.find(session[:user_id]): nil
