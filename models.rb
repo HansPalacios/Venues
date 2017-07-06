@@ -1,7 +1,20 @@
-class User <ActiveRecord::Base
-	has_many :emails
+class User<ActiveRecord::Base
+  has_many :posts
 end
 
-class Email <ActiveRecord::Base
-	belongs_to :user
+# class Year<ActiveRecord::Base
+#   # has_many :months
+#   has_many :posts
+# end
+
+# class Month<ActiveRecord::Base
+#   has_many :posts
+#   # belongs_to :year
+# end
+
+class Post<ActiveRecord::Base
+  belongs_to :user
+  # belongs_to :month
+  # belongs_to :year
 end
+

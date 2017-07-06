@@ -9,9 +9,12 @@ require './models'
 enable :sessions
 
 #configure our database
-set :database, {adapter: "sqlite3", database: "db/hack.db"}
+set :database, {adapter: "sqlite3", database: "db/venues.db"}
 # models.rb requires a database connection, so lets include that only after a database is configured
 
+# before do
+# @current_user = session[:user_id] ? User.find(session[:user_id]): nil
+# end
 
 get '/' do 
 
@@ -31,24 +34,6 @@ get '/signup' do
 end
 
 
-before do
-	@posts = {
-		houseofyes:{name: "House of Yes", image: "/images/houseofyes.jpeg", description: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", categories: ["July"]},
-		houseofyes:{name: "House of Yes", image: "/images/houseofyes.jpeg", description: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", categories: ["July"]},
-		houseofyes:{name: "House of Yes", image: "/images/houseofyes.jpeg", description: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", categories: ["July"]},
-		houseofyes:{name: "House of Yes", image: "/images/houseofyes.jpeg", description: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", categories: ["July"]},
-		houseofyes:{name: "House of Yes", image: "/images/houseofyes.jpeg", description: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", categories: ["July"]},
-		houseofyes:{name: "House of Yes", image: "/images/houseofyes.jpeg", description: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", categories: ["July"]},
-		houseofyes:{name: "House of Yes", image: "/images/houseofyes.jpeg", description: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", categories: ["July"]},
-		houseofyes:{name: "House of Yes", image: "/images/houseofyes.jpeg", description: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", categories: ["July"]},
-		houseofyes:{name: "House of Yes", image: "/images/houseofyes.jpeg", description: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", categories: ["July"]},
-		houseofyes:{name: "House of Yes", image: "/images/houseofyes.jpeg", description: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", categories: ["July"]},
-		houseofyes:{name: "House of Yes", image: "/images/houseofyes.jpeg", description: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", categories: ["July"]},
-		houseofyes:{name: "House of Yes", image: "/images/houseofyes.jpeg", description: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", categories: ["July"]},
-		houseofyes:{name: "House of Yes", image: "/images/houseofyes.jpeg", description: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", categories: ["July"]},
-		houseofyes:{name: "House of Yes", image: "/images/houseofyes.jpeg", description: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", categories: ["July"]},
-	}
-end
 
 get '/posts' do
 	@posts = Post.all 
@@ -56,6 +41,7 @@ get '/posts' do
 end
 get '/post/:id' do
 	@post = Post.find(params[:id])
+	erb :post
 end
 
 	# @archive = @post.reduce([]) do |arr,(key,hash)|
@@ -63,7 +49,7 @@ end
 	# end
 
 
-post '/sign-in' do
+post '/contact' do
 	@post = Email.create(params[:email])
 	flash[:notice] = "We have received your email and will get back to you as soon as possible"
 	flash[:alert] = "You need to put on a sweater"
