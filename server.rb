@@ -7,12 +7,15 @@ require 'sinatra/flash'
 # configure :development, :test do 
 # 	set :database, {adapter: "sqlite3", database: "db/venues.db"}
 # end
+configure :production do
+	require 'pg'
+end
 require 'rake'
 require './models'
 enable :sessions
 
 #configure our database
-tabase is configured
+# tabase is configured
 
 before do
 @current_user = session[:user_id] ? User.find(session[:user_id]): nil
