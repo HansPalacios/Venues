@@ -20,10 +20,9 @@
   </div>
   <div class="col-md-10">
     <div class="posts">
-    	<% @posts.each do|post| %>
-   			<article><a href="/posts/<%=post.id%>"></a></article>
+    	<% @posts.select{|post,hash| hash[:categories]}.each do|post, hash| %>
+   			<article><a href="/posts/<%=post.id%>"><div style="background-image:url(<%= hash[:image] %>)"><div> <%= hash[:name] %> </div></div></a></article>
    		<%end%>
     </div>
   </div>
 </div>
-

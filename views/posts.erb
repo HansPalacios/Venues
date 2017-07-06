@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-md-12">
+   <div class="posts">
+    	<% @posts.each do|post| %>
+   			<article><a href="/posts/<%=post.id%>">
+   				<%= @Post[0].title %>
+   				<%= @Post[0].content %>
+   			</a></article>
+   		<%end%>
+    </div>
+  </div>
+</div>

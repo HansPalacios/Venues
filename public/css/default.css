@@ -1,7 +1,8 @@
+/*general*/
 * {
 	margin: 0;
 	padding: 0;
-	}
+}
 body {
 	background-image: url("../images/club2.jpg");
 	background-attachment: fixed;
@@ -9,6 +10,16 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+.container {
+	width: 98%;
+}
+a {
+	text-decoration-style: none;	
+	text-decoration-line: none;
+	color: white;
+}
+
+/*header*/
 #header {
 	background: linear-gradient(90deg, rgba(12,0,58,1), rgba(12,0,58,.7));
 	margin-top: 50px;
@@ -24,18 +35,27 @@ body {
 	color: white;
 	cursor: pointer;
 }
+h1 {
+	width: 240px;
+	margin: 30px auto;
+	text-align: center;
+}
+li {
+	list-style-type: none;
+	display: inline-block;
+	margin: 3px 20px;
+	float: left;
+}
 #nav {
 	margin-bottom: 50px;
-}
-.container {
-	width: 98%;
-}
-#nav {
 	background-color: rgba(100,100,100,.5);
 	height: 30px;
 }
+
+/*Homepage*/
+
 .shade {
-	background: linear-gradient( black,rgba(100,100,100,.7));
+	background-color: black;
 	padding-top: 20px;
 	border-radius: 2%;
 }
@@ -84,7 +104,7 @@ body {
 	border: 1px solid grey;
 	margin: 40px auto;
 }
-h5 {
+#months h5, #feed h5, #sponsors h5 {
 	color: black;
 }
 .posts img{
@@ -95,22 +115,7 @@ h5 {
 	margin: 20px;
 }
 
-h1 {
-	width: 240px;
-	margin: 30px auto;
-	text-align: center;
-}
-a {
-	text-decoration-style: none;	
-	text-decoration-line: none;
-	color: white;
-}
-li {
-	list-style-type: none;
-	display: inline-block;
-	margin: 3px 20px;
-	float: left;
-}
+/*footer & sign in box*/
 footer {
 	background-color: black;
 	height: 200px;
@@ -125,7 +130,6 @@ footer {
 	cursor: pointer;
 	margin: 5px;
 }
-
 #contact, #signinbox {
 	width: 600px;
 	height: 350px;
@@ -176,3 +180,17 @@ form input[name="submit"]{
 	margin: 10px auto;
 	padding: 1px;
 }
+.profile {
+	background-color: grey;
+}
+
+.posts {
+	background-color: darkgrey;
+}
+
+
+
+
+
+
+
