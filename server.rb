@@ -110,5 +110,5 @@ get '/post/:id/delete' do
      flash[:message] = "Your post could not be deleted"
    end
    redirect '/'
- +end
+ end
 
