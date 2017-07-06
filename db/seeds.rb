@@ -1,7 +1,7 @@
 User.create ([
-	{username: 'Dennis', password: 'california', email: 'dennis@california.net'}, 
-	{username: 'Logan', password: 'Baker', email: 'logan@flour.com'},
-	{username: 'Nick', password: 'Fehlinger', email: 'bearded@hipster.com'}
+	{username: 'Dennis', fname: 'Dennis', lname: 'California', password: 'california', email: 'dennis@california.net'}, 
+	{username: 'Logan', fname: 'Logan', lname: 'Baker', password: 'Baker', email: 'logan@flour.com'},
+	{username: 'Nick', fname: 'Nick', lname: 'Fehlinger', password: 'Fehlinger', email: 'bearded@hipster.com'}
 	])
 # myYears = [
 # 	{ id: "2017" year: "2017"},
