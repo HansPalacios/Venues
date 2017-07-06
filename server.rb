@@ -12,12 +12,13 @@ enable :sessions
 set :database, {adapter: "sqlite3", database: "db/venues.db"}
 # models.rb requires a database connection, so lets include that only after a database is configured
 
-# before do
-# @current_user = session[:user_id] ? User.find(session[:user_id]): nil
-# end
+before do
+@current_user = session[:user_id] ? User.find(session[:user_id]): nil
+end
+
 
 get '/' do 
-
+	@posts = Post.order( created_at: :desc ).limit(10)
 	erb :home
 end
 
@@ -25,15 +26,14 @@ get '/profile' do
 	erb :profile
 end
 
-get '/archive' do
-	erb :archive
-end 
 
 get '/signup' do
 	erb :signup
 end
 
-
+get '/write' do 
+	erb :write
+end
 
 get '/posts' do
 	@posts = Post.all 
@@ -66,5 +66,33 @@ post '/sign-in' do
 		redirect "/profile"
 	else    
 		flash[:notice] = "There was a problem signing you in."
+		redirect '/'
 	end
 	end
+
+post '/profile' do
+   if @current_user.password == params[:password]
+     @current_user.update(
+       fname: params[:fname],
+       lname: params[:lname]
+     )
+     flash[:message] = "Updated"
+   else
+     flash[:message] = "Incorrect Password"
+   end
+   redirect '/profile'
+ end
+
+
+post '/write' do
+ @post = Post.new( title: params[:title],
+   			 body: params[:body],
+             user_id: @current_user.id )
+   if @post.save
+     flash[:message] = "Posted!"
+     redirect '/write'
+   else
+     flash[:message] = "Not Posted"
+     redirect '/write'
+   end
+ end

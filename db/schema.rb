@@ -12,12 +12,8 @@
 
 ActiveRecord::Schema.define(version: 20170705210234) do
 
-  # create_table "months", force: :cascade do |t|
-  #   t.string "month"
-  # end
-
   create_table "posts", force: :cascade do |t|
-    t.string "name"
+    t.string "title"
     t.text "content"
     t.integer "user_id"
     t.datetime "created_at", null: false
@@ -29,9 +25,5 @@ ActiveRecord::Schema.define(version: 20170705210234) do
     t.string "password"
     t.string "email"
   end
-
-  # create_table "years", force: :cascade do |t|
-  #   t.integer "year"
-  # end
 
 end
