@@ -1,0 +1,17 @@
+<div class="row write">
+	<div class="col-md-8">
+		<h2>Write A Post</h2>
+		<br>
+		<%=flash[:message]%>
+		<br>
+		<form method="POST" action="/write">
+		<label for="Title">Title</label>
+		<input type="text" name="title">
+		<br>
+		<label for="Content">Content</label>
+		<input type="content" name="content">
+		<br>
+		<input type="submit" name="submit">	
+		</form>
+	</div>
+</div>
