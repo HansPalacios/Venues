@@ -25,7 +25,9 @@ end
 get '/profile' do
 	erb :profile
 end
-
+get '/sign-in' do
+	erb :signin
+end
 
 get '/signup' do
 	erb :signup
@@ -66,9 +68,9 @@ post '/sign-in' do
 		redirect "/profile"
 	else    
 		flash[:notice] = "There was a problem signing you in."
-		redirect '/'
+		redirect '/profile'
 	end
-	end
+end
 
 post '/profile' do
    if @current_user.password == params[:password]
