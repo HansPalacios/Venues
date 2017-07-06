@@ -93,22 +93,25 @@ post '/write' do
              user_id: @current_user.id )
    if @post.save
      flash[:message] = "Posted!"
-     redirect '/write'
    else
      flash[:message] = "Not Posted"
-     redirect '/write'
    end
+       redirect '/write'
  end
 
 get '/post/:id/delete' do
    @post = Post.find( params[:id] )
    if @post.user_id != @current_user.id
-     flash[:message] = "You dirty dog, that's not your post!"
+     flash[:message] = "Unable to delete, no access rights"
    elsif @post.destroy
      flash[:message] = "Deleted post"
    else
      flash[:message] = "Your post could not be deleted"
    end
-   redirect '/'
+   redirect '/profile'
  end
 
+get '/profile/update' do
+	@current_user.update( username: params[:username], password: params[:password], fname: params[:fname], lname: params[:lname], email: params[:email] )
+	redirect '/profile'
+end
