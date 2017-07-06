@@ -1,122 +1,68 @@
 <div class="row profile">
-  <div class="col-sm-3 well">
-    <div class="well">
-      <p><a href="#">My Profile</a>
-      </p>
-      <img src="" class="img-circle" height="65" width="65" alt="IMAGE">
-    </div>
-    <div class="card" style="width: 20rem;">
-      <div class="card-block">
-        <h4 class="card-title">Summary about me</h4>
-        <p class="card-text">user bio goes here.
-        </p>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">New york</li>
-        <li class="list-group-item">post blog</li>
-        <li class="list-group-item">i hate ruby and bootstrap</li>
-      </ul>
-      <div class="card-block">
-        <a href="#" class="Back to Bio">back to top</a>
-      </div>
-    </div>
-  </div>
-    <div class="row posts">
-      <div class="col-sm-10">
-        <div class="well">
-          <h3>post </h3>
-          <img src="" class="img-circle" height="55" width="55" alt="Avatar">
-        </div>
-      </div>
-      <div class="col-sm-9">
-        <div class="well">
-          <p><%=%></p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-3">
-        <div class="well">
-          <h3>post </h3>
-          <img src="" class="img-circle" height="55" width="55" alt="Avatar">
-        </div>
-      </div>
-      <div class="col-sm-9">
-        <div class="well">
-          <p>example of post goes here.. the post is supposed to show here..
-            all the posts that i did will show here.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-3">
-        <div class="well">
-          <h3>post </h3>
-          <img src="" class="img-circle" height="55" width="55" alt="Avatar">
-        </div>
-      </div>
-      <div class="col-sm-9">
-        <div class="well">
-          <p>example of post goes here.. the post is supposed to show here..
-            all the posts that i did will show here.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="row num">
-      <div class="col-sm-3">
-        <div class="well">
-        </div>
-      </div>
-      <div class="col-sm-9">
-        <div class="well">
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="edit-input" class="col-sm-2 well">
+  <div class="col-md-6">
+    <h4 id="acct">Welcome <%= @current_user.username %>!!</h4>
+    <div id="edit-input" >
     <div class="thumbnail">
       <p>Account details:</p>
       <form>
         <div class="form-group">
-          <label for="profilename">username</label>
-          <input type="username" class="form-control" id="profileName" placeholder="Profile name">
+          <label>Username</label>
+          <input type="username" class="form-control" id="profileName" placeholder="username">
         </div>
         <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
+          <label>Email address</label>
           <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
+          <label>Password</label>
           <input type="password" class="form-control" id="exampleInputPassword1"
           placeholder="Password">
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">First Name</label>
+          <label>First Name</label>
           <input type="fname" class="form-control" id="fname" placeholder="First Name">
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Last Name</label>
+          <label>Last Name</label>
           <input type="lname" class="form-control" id="exampleInputPassword1" placeholder="Last Name">
         </div>
+        <br>
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
             <div class="pull-right">
-              <button type="submit" class="btn btn-primary">Save</button>
-              <button type="submit" class="btn btn-danger">Delete</button>
+              <button type="submit" class="save">Save</button>
+              <button type="submit" class="delete">Delete</button>
             </div>
           </div>
         </div>
     </div>
     </form>
   </div>
-</div>
-<div id="acct_info" class="col-sm-2 well">
-  <p><%= @current_user.username %></p>
-  <p><%= @current_user.email %></p>
-  <p><%= @current_user.fname %></p>
-  <p><%= @current_user.lname %></p>
-  <button type="text" class="edit">Edit</button>
-</div>
+  <div id="acct-info" >
+    <h4>Username:</h4>
+    <p><%= @current_user.username %></p>
+    <br>
+    <h4>Email:</h4>
+    <p><%= @current_user.email %></p>
+    <br>
+    <h4>First Name</h4>
+    <p><%= @current_user.fname %></p>
+    <br>
+    <h4>Last Name</h4>
+    <p><%= @current_user.lname %></p>
+    <button type="text" id="edit">Edit</button>
+  </div>
+
+  </div>
+  <div class="col-md-6 myposts">
+    <h4>Posts</h4>
+      <div class="article">
+        <% @posts.each do |post| %>
+          <article><a href="/post/<%= post.id %>">
+          <h5><%= post.title %></h5>
+          <p><%= post.content %></p>
+          </a></article>
+        <% end %>
+      </div>
+  </div>
 </div>

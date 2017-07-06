@@ -3,8 +3,8 @@ close_button = document.getElementById("close");
 close_button2 = document.getElementById("close2");
 //edit toggle
 edit = document.getElementById("edit");
-edit_input = document.getElementById("edit_input");    
-acct_info = document.getElementById("acct_info");
+edit_input = document.getElementById("edit-input");    
+acct_info = document.getElementById("acct-info");
 //edit toggle end
 contact = document.getElementById("contact");
 signin = document.getElementById("signin");
@@ -27,7 +27,7 @@ close_button2.addEventListener("click", function(){
 
 //js for profile page
 edit.addEventListener("click", function(){
-    edit_input.style.display = "block";
+    edit_input.style.display = "inline-block";
     acct_info.style.display = "none";
 });
 // end js profile
