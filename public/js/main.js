@@ -11,8 +11,6 @@ signin = document.getElementById("signin");
 signinbox = document.getElementById("signinbox");
 
 
-
-
 signin.addEventListener("click", function(){
     signinbox.style.display = "block";
 });
@@ -26,6 +24,7 @@ contact_button.addEventListener("click", function(){
 close_button2.addEventListener("click", function(){
     contact.style.display = "none";
 });
+
 //js for profile page
 edit.addEventListener("click", function(){
     edit_input.style.display = "block";
