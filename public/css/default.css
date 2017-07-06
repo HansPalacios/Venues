@@ -204,20 +204,22 @@ form input[name="submit"]{
 
 article {
 	margin: 20px;
-	border: 2px solid white;
-	background-color: darkgrey;
+/*	border: 2px solid white;
+*/	background: linear-gradient(rgba(12,0,58,1), rgba(12,0,200,.7));
 	float: left;
-	width: 300px;
-	height: 100px;
+	width: 350px;
+	height: 150px;
+	padding: 30px;
 }
 article p {
-	color: black;
+	color: darkgrey;
 }
 article h5 {
-	background-color: grey;
+	color: white;
 	text-align: center;
 	width: 100%;
 	padding: 5px;
+	font-size: 15px;
 }
 
 .indivpost {
