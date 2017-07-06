@@ -16,8 +16,12 @@ before do
 @current_user = session[:user_id] ? User.find(session[:user_id]): nil
 end
 
+before ['/write','/profile'] do
+   redirect '/' unless @current_user 
+end
 
 get '/' do 
+	# @users = User.where.not( status: :deleted)
 	@posts = Post.order( created_at: :desc ).limit(10)
 	erb :home
 end
@@ -77,18 +81,15 @@ post '/profile' do
        fname: params[:fname],
        lname: params[:lname]
      )
-     flash[:message] = "Updated"
+     redirect '/profile'
    else
-     flash[:message] = "Incorrect Password"
+     redirect '/'
    end
-   redirect '/profile'
  end
-
-
 
 post '/write' do
  @post = Post.new( title: params[:title],
-   			 body: params[:body],
+   			 content: params[:content],
              user_id: @current_user.id )
    if @post.save
      flash[:message] = "Posted!"
@@ -98,3 +99,16 @@ post '/write' do
      redirect '/write'
    end
  end
+
+get '/post/:id/delete' do
+   @post = Post.find( params[:id] )
+   if @post.user_id != @current_user.id
+     flash[:message] = "You dirty dog, that's not your post!"
+   elsif @post.destroy
+     flash[:message] = "Deleted post"
+   else
+     flash[:message] = "Your post could not be deleted"
+   end
+   redirect '/'
+ +end
+

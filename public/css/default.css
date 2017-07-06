@@ -55,16 +55,15 @@ li {
 /*Homepage*/
 
 .shade {
-	/*background-color: darkgrey;*/
 	padding-top: 20px;
 	border-radius: 2%;
 }
-/*.shade-su {
+.shade-su {
 	background-color: rgba(100,100,100,.8);
 	padding: 50px;
 	margin: 50px;
-}*/
-/*.shade-su label {
+}
+.shade-su label {
 	color: white;
 	font-size: 15px;
 }
@@ -76,7 +75,7 @@ li {
 	font-size: 25px;
 	text-align: center;
 	margin: 20px;
-}*/
+}
 /*#months .row {
 	height: 30px;
 	background-color: rgba(100,100,100,.7);
@@ -225,8 +224,9 @@ article h5 {
 .indivpost {
 	background: linear-gradient(rgba(12,0,58,1), rgba(12,0,200,.7));
 	font-color: white;
-	margin: 200px;
-	height: 200px;
+	margin: 50px auto;
+	height: 300px;
+	text-align: center;
 }
 .indivpost h2 {
 	margin: 20px;
@@ -238,6 +238,8 @@ article h5 {
 	color: darkgrey;
 	text-align: center;
 	font-size: 20px;
+	width: 100%;
+	padding: 50px 150px 50px 150px;
 }
 
 #edit-input {
