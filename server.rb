@@ -4,6 +4,9 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'bundler/setup'
 require 'sinatra/flash'
+configure :development, :test do 
+	set :databse, {adaper: 'sqlite3', database: 'db/microblog'}
+end
 require 'rake'
 require './models'
 enable :sessions
