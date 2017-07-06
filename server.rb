@@ -4,9 +4,9 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'bundler/setup'
 require 'sinatra/flash'
-configure :development, :test do 
-	set :database, {adapter: "sqlite3", database: "db/venues.db"}
-end
+# configure :development, :test do 
+# 	set :database, {adapter: "sqlite3", database: "db/venues.db"}
+# end
 require 'rake'
 require './models'
 enable :sessions
