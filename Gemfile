@@ -4,13 +4,15 @@ source	'http://rubygems.org'
 
 gem 'sinatra'
 gem 'sinatra-activerecord'
-# gem 'sqlite3'
 gem 'rake'
 gem 'sinatra-flash'
-group :development, :test do
-	gem "sqlite3"
-end
+gem 'pg'
 group :production do
-	gem "pg"
+
+  gem 'pg'
 end
+
+# group :development, :test do
+#   gem 'sqlite3'
+# end
 
