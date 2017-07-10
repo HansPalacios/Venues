@@ -39,6 +39,7 @@ end
 
 get '/user/:id' do
 	@user = User.find(params[:id])
+	@posts = @user.posts
 	erb :user
 end
 

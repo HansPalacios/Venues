@@ -288,9 +288,13 @@ article h5 {
 .userpage {
 	background: linear-gradient(rgba(12,0,58,1), rgba(12,0,200,.7));
 	color: white;
-	margin: 50px auto;
+	margin: 20px auto;
 	text-align: center;
 	padding: 50px;
+	height: 500px;
+}
+.userpage h2 {
+	padding: 20px;
 }
 .userlist {
 	margin: 20px;
@@ -301,6 +305,17 @@ article h5 {
 	height: 50px;
 	padding: 10px;
 }
-
+.userposts {
+	padding: 50px;
+	margin-right: 100px;
+	color: white;
+	margin-top: 0;
+}
+.userposts h4 {
+	font-size: 40px;
+	width: 150px;
+	text-align: center;
+	margin-left: 110px;
+}
 
 
