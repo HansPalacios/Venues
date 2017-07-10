@@ -3,6 +3,7 @@ class InitializeDatabase < ActiveRecord::Migration[5.1]
   def change
   	create_table :users do |t|
   		t.string :username
+      t.text :bio, limit: 500
   		t.string :fname
   		t.string :lname
   		t.string :password
@@ -16,7 +17,7 @@ class InitializeDatabase < ActiveRecord::Migration[5.1]
     # end
     create_table :posts do |t|
     t.string :title
-    t.text :content
+    t.text :content, limit: 150
     t.integer :user_id
     t.timestamps
     end

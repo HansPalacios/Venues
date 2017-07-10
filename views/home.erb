@@ -1,21 +1,4 @@
 <div class="row">
-		<!-- <div id="months" class="col-md-1">
-			<div class="row">
-				<a href="/archive"><h5>Blog Archive</h5></a>
-			</div>
-			<div class="row">
-				<a href="/archive/july"><h5>July</h5></a>
-			</div>
-			<div class="row">
-				<a href="/archive/august"><h5>Aug</h5></a>
-			</div>
-			<div class="row">
-				<a href="/archive/september"><h5>Sep</h5></a>
-			</div>
-			<div class="row">
-				<a href="/archive/october"><h5>Oct</h5></a>
-			</div>
-		</div> -->
 		<div id="feed" class="col-md-9">
 			<div class="container">
 				<div class="row shade">
@@ -42,15 +25,13 @@
 				</div>
 			</div>
 		</div>
-		<div id="sponsors" class="col-md-2">
-		<div class="row">
-				<a href="/sponsor1"><h5>Sponsor1</h5></a>
-			</div>
+		<div id="userlist" class="col-md-2">
 			<div class="row">
-				<a href="/sponsor2"><h5>Sponsor2</h5></a>
-			</div>
-			<div class="row">
-				<a href="/sponsor3"><h5>Sponsor3</h5></a>
+				<% @users.each do |user| %>
+		   			<article class="userlist"><a href="/user/<%= user.id %>">
+		   			<h5><%= user.username %></h5>
+	   			</a></article>
+	   			<% end %>
 			</div>
 		</div>
 </div>
