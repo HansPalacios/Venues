@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-md-12 userpage">
+	<div class="col-md-5 userpage">
 		<div class="row">
 		</div>
 		<div class="row">
@@ -7,7 +7,28 @@
 		 </div>
 		 <br>
 		 <div class="row">
-		 <p><%= @user.bio %></p>
+		 	<div class="col-md-2">
+			 	<h2>Bio:</h2>
+			 </div>
+			 <div class="col-md-10">
+			 <br>
+			 <br>
+			 <br>
+		 		<p><%= @user.bio %></p>
+		 	</div>
 		</div>
 	</div>
+	<div class="col-md-4 userposts">
+    <h4>Posts</h4>
+      <div class="article">
+        <% @posts.each do |post| %>
+          <article><a href="/post/<%= post.id %>">
+          <h5><%= post.title %></h5>
+          <p><%= post.content %></p>
+          </a><a href="/post/<%= post.id %>/delete"><button style.display="block" name="delete">Delete</button></a><%=flash[:message]%></article>
+        <% end %>
+      </div>
+      <div class="col-md-1">
+      </div>
+  </div>
  </div>
