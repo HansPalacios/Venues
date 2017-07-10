@@ -4,15 +4,18 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'bundler/setup'
 require 'sinatra/flash'
-# configure :development, :test do 
-# 	set :database, {adapter: "sqlite3", database: "db/venues.db"}
-# end
+configure :development, :test do 
+	set :database, {adapter: "sqlite3", database: "db/venues.db"}
+end
+configure :production do
+	require 'pg'
+end
 require 'rake'
 require './models'
 enable :sessions
 
 #configure our database
-tabase is configured
+# tabase is configured
 
 before do
 @current_user = session[:user_id] ? User.find(session[:user_id]): nil
@@ -25,6 +28,7 @@ end
 get '/' do 
 	# @users = User.where.not( status: :deleted)
 	@posts = Post.order( created_at: :desc ).limit(10)
+	@users = User.all
 	erb :home
 end
 
@@ -32,17 +36,35 @@ get '/profile' do
 	@posts = @current_user.posts
 	erb :profile
 end
-get '/sign-in' do
-	erb :signin
+
+get '/user/:id' do
+	@user = User.find(params[:id])
+	erb :user
+
 end
 
 get '/signup' do
 	erb :signup
 end
+post '/signup' do
+	@user = User.create( username: params[:username], password: params[:password], fname: params[:fname], lname: params[:lname], email: params[:email] )
+	redirect '/profile'
+end
 
 get '/write' do 
 	erb :write
 end
+post '/write' do
+ @post = Post.new( title: params[:title],
+   			 content: params[:content],
+             user_id: @current_user.id )
+   if @post.save
+     flash[:message] = "Posted!"
+   else
+     flash[:message] = "Not Posted"
+   end
+       redirect '/write'
+ end
 
 get '/posts' do
 	@posts = Post.all 
@@ -75,8 +97,10 @@ post '/sign-in' do
 		redirect "/profile"
 	else    
 		flash[:notice] = "There was a problem signing you in."
-		redirect '/profile'
+
+		redirect '/'
 	end
+
 end
 
 post '/profile' do
@@ -91,18 +115,6 @@ post '/profile' do
    end
  end
 
-post '/write' do
- @post = Post.new( title: params[:title],
-   			 content: params[:content],
-             user_id: @current_user.id )
-   if @post.save
-     flash[:message] = "Posted!"
-   else
-     flash[:message] = "Not Posted"
-   end
-       redirect '/write'
- end
-
 get '/post/:id/delete' do
    @post = Post.find( params[:id] )
    if @post.user_id != @current_user.id
@@ -115,7 +127,21 @@ get '/post/:id/delete' do
    redirect '/profile'
  end
 
-get '/profile/update' do
-	@current_user.update( username: params[:username], password: params[:password], fname: params[:fname], lname: params[:lname], email: params[:email] )
+post '/profile/update' do
+	@current_user.update( username: params[:username], password: params[:password], fname: params[:fname], lname: params[:lname], email: params[:email])
 	redirect '/profile'
+end
+
+get '/profile/deleteuser' do
+	User.transaction do
+		@current_user.posts.destroy_all
+		@current_user.destroy
+		session[:user_id] = nil
+	end
+	redirect '/'
+end
+
+get '/profile/signout' do
+	session[:user_id] = nil
+		redirect '/'
 end

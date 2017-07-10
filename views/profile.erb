@@ -1,58 +1,62 @@
 <div class="row profile">
   <div class="col-md-6">
     <h4 id="acct">Welcome <%= @current_user.username %>!!</h4>
+    <a  id="signoutmove" href="/profile/signout"><button id="signout">Sign Out</button></a>
+    <br>
+    <br>
     <div id="edit-input" >
-    <div class="thumbnail">
-      <p>Account details:</p>
-      <form>
-        <div class="form-group">
-          <label>Username</label>
-          <input type="username" id="profileName" placeholder="username" name="username">
-        </div>
-        <div class="form-group">
-          <label>Password</label>
-          <input type="password" id="exampleInputPassword1"
-          placeholder="Password" name="password">
-        </div>
-        <div class="form-group">
-          <label>First Name</label>
-          <input type="fname" id="fname" placeholder="First Name" name="fname">
-        </div>
-        <div class="form-group">
-          <label>Last Name</label>
-          <input type="lname" id="exampleInputPassword1" placeholder="Last Name" name="lname">
-        </div>
-        <div class="form-group">
-          <label>Email address</label>
-          <input type="email" id="exampleInputEmail1" placeholder="Email" name="email">
-        </div>
-        <br>
-        <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
-            <div class="pull-right">
-              <a href="/profile/update"><button type="submit" class="save">Save</button></a>
-              <a href="/profile/deleteuser"><button type="delete" class="delete" name="delete">Delete User</button></a>
+      <div class="thumbnail">
+        <p>Account details:</p>
+        <form method="POST" action="/profile/update">
+          <div class="form-group">
+            <label>Username</label>
+            <input type="username" id="profileName" placeholder="username" name="username">
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="exampleInputPassword1"
+            placeholder="Password" name="password">
+          </div>
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="fname" id="fname" placeholder="First Name" name="fname">
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="lname" id="exampleInputPassword1" placeholder="Last Name" name="lname">
+          </div>
+          <div class="form-group">
+            <label>Email address</label>
+            <input type="email" id="exampleInputEmail1" placeholder="Email" name="email">
+          </div>
+          <br>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="pull-right">
+            <button type="submit" class="save">Save</button>
+                <br>
+              </div>
             </div>
           </div>
         </div>
+      </form>
+      <a href="/profile/deleteuser"><button type="delete" class="delete" name="delete">Delete User</button></a>
     </div>
-    </form>
-  </div>
-  <div id="acct-info" >
-    <h4>Username:</h4>
-    <p><%= @current_user.username %></p>
-    <br>
-    <h4>Email:</h4>
-    <p><%= @current_user.email %></p>
-    <br>
-    <h4>First Name</h4>
-    <p><%= @current_user.fname %></p>
-    <br>
-    <h4>Last Name</h4>
-    <p><%= @current_user.lname %></p>
-    <button type="text" id="edit">Edit</button>
-  </div>
-
+    <div id="acct-info" >
+      <h4>Username:</h4>
+      <p><%= @current_user.username %></p>
+      <br>
+      <h4>First Name</h4>
+      <p><%= @current_user.fname %></p>
+      <br>
+      <h4>Last Name</h4>
+      <p><%= @current_user.lname %></p>
+      <br>
+      <h4>Email:</h4>
+      <p><%= @current_user.email %></p>
+      <br>
+      <button type="text" id="edit">Edit</button>
+    </div>
   </div>
   <div class="col-md-6 myposts">
     <h4>Posts</h4>
@@ -67,3 +71,5 @@
       </div>
   </div>
 </div>
+<script src="/js/profile.js"></script>
+

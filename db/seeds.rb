@@ -1,9 +1,24 @@
 User.create ([
-	{username: 'Dennis', fname: 'Dennis', lname: 'California', password: 'california', email: 'dennis@california.net'}, 
-	{username: 'Logan', fname: 'Logan', lname: 'Baker', password: 'Baker', email: 'logan@flour.com'},
-	{username: 'Nick', fname: 'Nick', lname: 'Fehlinger', password: 'Fehlinger', email: 'bearded@hipster.com'}
+	{username: 'Dennis', bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',fname: 'Dennis', lname: 'California', password: 'california', email: 'dennis@california.net'}, 
+	{username: 'Logan', bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',fname: 'Logan', lname: 'Baker', password: 'Baker', email: 'logan@flour.com'},
+	{username: 'Nick', bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',fname: 'Nick', lname: 'Fehlinger', password: 'Fehlinger', email: 'bearded@hipster.com'}
 	])
-	Post.create ([
+Post.create ([
     {title: "House of Yes", content: "Funky venue showcasing dance, circus, theater & cabaret performances in a former ice warehouse.", user_id:1},
     {title: "1oak", content: "Great music, very expensive drinks with built in gratuity.", user_id:2},
     {title: "ibiza", content: "Edm music, nice club, good drinks but staff is very rude and can ruin your night", user_id:3},
