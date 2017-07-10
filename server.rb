@@ -40,6 +40,7 @@ end
 get '/user/:id' do
 	@user = User.find(params[:id])
 	erb :user
+
 end
 
 get '/signup' do
@@ -96,9 +97,10 @@ post '/sign-in' do
 		redirect "/profile"
 	else    
 		flash[:notice] = "There was a problem signing you in."
+
 		redirect '/'
 	end
-	
+
 end
 
 post '/profile' do
